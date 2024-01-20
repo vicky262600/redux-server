@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 const helmet = require("helmet");
 const morgan = require("morgan");
 const authRouter = require("./routes/auth");
+const postRouter = require("./routes/posts");
 
 dotenv.config();
 
@@ -20,6 +21,8 @@ app.use(helmet());
 app.use(morgan("common"));
 
 app.use("/api/auth", authRouter);
+app.use("/api/posts", postRouter);
+
 
 // app.use("/api/auth", useR   )
 // app.get("/", (req, res)=>{
