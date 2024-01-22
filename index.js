@@ -6,6 +6,7 @@ const helmet = require("helmet");
 const morgan = require("morgan");
 const authRouter = require("./routes/auth");
 const postRouter = require("./routes/posts");
+const cors = require("cors");
 
 dotenv.config();
 
@@ -14,6 +15,12 @@ mongoose.connect(
     ).then(()=>console.log("db connection successful"))
     .catch((err)=>{console.log(err);
 });
+
+app.use(cors({
+    origin: ["https://redux-fe.vercel.app"],
+    methods: ["GET", "PUT", "POST", "DELETE"],
+    credentials: true
+}));
 
 // middleware
 app.use(express.json())
