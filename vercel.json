@@ -3,9 +3,8 @@
       {
         "src": "/api/*",
         "dest": "/api/index.js",
-        "methods": ["GET", "POST", "PUT", "DELETE"],
+        "methods": ["GET", "POST", "PUT", "DELETE"]
       }
-      // Other route configurations...
     ]
   }
   
