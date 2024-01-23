@@ -16,6 +16,11 @@ mongoose.connect(
     .catch((err)=>{console.log(err);
 });
 
+
+app.use("/hello-world",(req, res) => {
+    res.send({message: 'Hello-world', code: 200})
+});
+
 app.use(cors({
     origin: ["https://redux-fe.vercel.app"],
     methods: ["GET", "PUT", "POST", "DELETE"],
